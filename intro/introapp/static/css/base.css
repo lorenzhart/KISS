@@ -1,0 +1,17 @@
+body {
+  background-color: #ECEEF1;/**/
+  color: #363947;
+}
+.container{
+  
+}
+
+img {
+  margin:10%;
+  width:80%;
+  height:80%;
+}
+p.hash{
+  font-size: 200%;
+  color: #0E7AC4; /*FBA848;*/
+}
