@@ -28,6 +28,12 @@
         <h2 class="name">{{ post.name }}</h2>
         <h2 class="roman">{{ post.roman }}</h2>
         <h3>{{ post.project }}</h3>
+        <ul>
+          <li>
+          <a href="{{STATIC_URL}}img/{{ post.twitter }}"><img class="img-responsive" src="{{STATIC_URL}}img/twitter.png"></a>
+          </li>
+          <li><a href="{{STATIC_URL}}img/{{ post.facebook }}"><img class="img-responsive" src="{{STATIC_URL}}img/facebook.png"></a></li>
+        </ul>
         <h3>Introduce</h3>
         <p >{{ post.comment }}</p>
         <h3>Background</h3>

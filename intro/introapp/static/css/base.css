@@ -15,3 +15,15 @@ p.hash{
   font-size: 200%;
   color: #0E7AC4; /*FBA848;*/
 }
+
+ul {
+  display: -webkit-box;
+  display: -moz-box;
+  width: 100%;
+  list-style:none;
+}
+
+li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+}
