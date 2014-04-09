@@ -47,21 +47,29 @@
         <p class="introduce">{{ post.comment }}</p>
         <h3>Background</h3>
         <p class="hash">{%for b in post.background %}
-          <a href="/search/background/{{ b }}/">#{{ b }}</a>
+          {% if not forloop.first %}
+            <a href="/search/background/{{ b }}/">#{{ b }}</a>
+          {% endif %}
         {% endfor %}</p>
         <h3>Skill</h3>
         <p class="hash">{% for s in post.skill %}
-          <a href="/search/skill/{{ s }}/">#{{ s }}</a>
-           {% endfor %}
+          {% if not forloop.first %}
+            <a href="/search/skill/{{ s }}/">#{{ s }}</a>
+          {% endif %}
+        {% endfor %}
         <h3>Interests</h3> 
-        <p class="introduce">
+        <p class="hash">
         {% for i in post.interest %}
-          <a href="/search/interest/{{ i }} }}/">#{{ i }}</a>
+          {% if not forloop.first %}
+            <a href="/search/interest/{{ i }} }}/">#{{ i }}</a>
+          {% endif %}
         {% endfor %}
         </p>
         <h3>Introduce From Everyone </h3>
         <p class="hash">{% for intro in post.introduce %}
-          <a href="/search/introduce/{{ intro }}/">#{{ intro }}</a>
+          {% if not forloop.first %}
+            <a href="/search/introduce/{{ intro }}/">#{{ intro }}</a>
+          {% endif %}
           {% endfor %}
         </p>
       </div>
