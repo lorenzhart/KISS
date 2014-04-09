@@ -13,6 +13,8 @@ class Post(models.Model):
     comment = models.CharField(max_length=200, null=True)
     background = models.CharField(max_length=200, null=True)
     skill = models.CharField(max_length=200, null=True)
+    twitter = models.CharField(max_length=200, null=True)
+    facebook = models.CharField(max_length=200, null=True)
     interest = models.CharField(max_length=200, null=True)
     introduce = models.CharField(max_length=200, null=True)
     img = models.CharField(max_length=200, null=True)
