@@ -17,25 +17,34 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+<script>
+
+</script>
 </head>
 <body>
 <div class="container"> 
   {% for post in Posts %}
   <div class="row">
+    <div class="col-xs-2">
+    </div>
     <div class="person">
-      <div class="col-xs-6">
+      <div class="col-xs-8">
         <img class="icon img-circle img-responsive" src="{{STATIC_URL}}img/{{ post.img }}" alt="Responsive image" />
-        <h2 class="name">{{ post.name }}</h2>
-        <h2 class="roman">{{ post.roman }}</h2>
-        <h3>{{ post.project }}</h3>
-        <ul>
+        <div class="text-center">
+          <span class="roman">{{ post.roman }}</span>
+          <h2 class="name">{{ post.name }}</h2>
+          <a href="/search/project/{{ post.project }}/" class="project">{{ post.project }}</a>
+        </div>
+        <ul class="social">
           <li>
-          <a href="{{STATIC_URL}}img/{{ post.twitter }}"><img class="img-responsive" src="{{STATIC_URL}}img/twitter.png"></a>
+            <a class="button twitter" href="{{ post.twitter }}">Twitter</a>
           </li>
-          <li><a href="{{STATIC_URL}}img/{{ post.facebook }}"><img class="img-responsive" src="{{STATIC_URL}}img/facebook.png"></a></li>
+          <li>
+            <a class="button facebook" href="{{ post.facebook }}">Facebook</a>
+          </li>
         </ul>
         <h3>Introduce</h3>
-        <p >{{ post.comment }}</p>
+        <p class="introduce">{{ post.comment }}</p>
         <h3>Background</h3>
         <p class="hash">{%for b in post.background %}
           <a href="/search/background/{{ b }}/">#{{ b }}</a>
@@ -49,12 +58,14 @@
           <a href="/search/interest/{{ i }} }}/">#{{ i }}</a>
         {% endfor %}
         </p>
-        <h3>HashTags on </h3>
+        <h3>Introduce From Everyone </h3>
         <p class="hash">{% for intro in post.introduce %}
           <a href="/search/introduce/{{ intro }}/">#{{ intro }}</a>
           {% endfor %}
         </p>
       </div>
+    </div>
+    <div class="col-xs-2">
     </div>
   </div>
   {% endfor %}

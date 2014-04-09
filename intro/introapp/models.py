@@ -6,6 +6,7 @@ connect(DATABASES["default"]["NAME"])
 
 class Post(models.Model):
     name = models.CharField(max_length=120, null=True)
+    roman = models.CharField(max_length=120, null=True)
     project = models.TextField(max_length=120, null=True)
     subproject = models.CharField(max_length=120, null=True)
     subprojectDescription = models.CharField(max_length=200, null=True)

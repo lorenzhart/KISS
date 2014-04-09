@@ -31,10 +31,10 @@ records = dbClient.GetListFeed(spread_id, sheet_id).entry
 articles = []
 for entry in records:
      article = gdata.spreadsheet.text_db.Record(row_entry=entry)
-     article.content['skill'] = unicode(article.content['skill']).split('#')
-     article.content['interest'] = unicode(article.content['interest']).split('#')
-     article.content['background'] = unicode(article.content['background']).split('#')
-     article.content['introduce'] = unicode(article.content['introduce']).split('#')
+     article.content['skill'] = unicode(article.content['skill']).replace('＃','#').split('#')
+     article.content['interest'] = unicode(article.content['interest']).replace('＃','#').split('#')
+     article.content['background'] = unicode(article.content['background']).replace('＃','#').split('#')
+     article.content['introduce'] = unicode(article.content['introduce']).replace('＃','#').split('#')
      articles.append(article.content)
 
 """
