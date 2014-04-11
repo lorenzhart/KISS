@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KISS! | KMD×Introduction×Stundents×Site</title>
+  <title>handsha9| KMD生紹介サイト</title>
 
   <!-- Bootstrap -->
   <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
@@ -17,66 +17,69 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-<script>
-
-</script>
 </head>
 <body>
 <div class="container"> 
   {% for post in Posts %}
-  <div class="row">
-    <div class="col-xs-2">
-    </div>
     <div class="person">
-      <div class="col-xs-8">
-        <img class="icon img-circle img-responsive" src="{{STATIC_URL}}img/{{ post.img }}" alt="Responsive image" />
-        <div class="text-center">
-          <span class="roman">{{ post.roman }}</span>
-          <h2 class="name">{{ post.name }}</h2>
-          <a href="/search/project/{{ post.project }}/" class="project">{{ post.project }}</a>
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="icon img-circle img-responsive" src="{{STATIC_URL}}img/{{ post.img }}" alt="Responsive image" />
+          <div id="names" class="text-center">
+            <span class="roman">{{ post.roman }}</span>
+            <h2 class="name">{{ post.name }}</h2>
+            <a href="/search/project/{{ post.project }}/" class="project">{{ post.project }}</a>
+          </div>
         </div>
-        <ul class="social">
-          <li>
-            <a class="button twitter" href="http://twitter.com/{{ post.twitter }}">Twitter</a>
-          </li>
-          <li>
-            <a class="button facebook" href="{{ post.facebook }}">Facebook</a>
-          </li>
-        </ul>
-        <h3>Introduce</h3>
-        <p class="introduce">{{ post.comment }}</p>
-        <h3>Background</h3>
-        <p class="hash">{%for b in post.background %}
-          {% if not forloop.first %}
-            <a href="/search/background/{{ b }}/">#{{ b }}</a>
-          {% endif %}
-        {% endfor %}</p>
-        <h3>Skill</h3>
-        <p class="hash">{% for s in post.skill %}
-          {% if not forloop.first %}
-            <a href="/search/skill/{{ s }}/">#{{ s }}</a>
-          {% endif %}
-        {% endfor %}
-        <h3>Interests</h3> 
-        <p class="hash">
-        {% for i in post.interest %}
-          {% if not forloop.first %}
-            <a href="/search/interest/{{ i }} }}/">#{{ i }}</a>
-          {% endif %}
-        {% endfor %}
-        </p>
-        <h3>Introduce From Everyone </h3>
-        <p class="hash">{% for intro in post.introduce %}
-          {% if not forloop.first %}
-            <a href="/search/introduce/{{ intro }}/">#{{ intro }}</a>
-          {% endif %}
-          {% endfor %}
-        </p>
+      </div>
+      <div class="row">
+        <div class="social">
+          <div class="col-xs-6 twitter">
+            <a class="button" href="http://twitter.com/{{ post.twitter }}">Twitter</a>
+          </div>
+          <div class="col-xs-6 facebook">
+            <a class="button" href="{{ post.facebook }}">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>ひとこと</h3>
+            <p class="introduce">{{ post.comment }}</p>
+          <h3>バックグラウンド</h3>
+            <p class="hash">
+              {%for b in post.background %}
+                {% if not forloop.first %}
+                  <a href="/search/background/{{ b }}/">#{{ b }}</a>
+                {% endif %}
+              {% endfor %}
+            </p>
+          <h3>スキル</h3>
+          <p class="hash">
+            {% for s in post.skill %}
+              {% if not forloop.first %}
+                <a href="/search/skill/{{ s }}/">#{{ s }}</a>
+              {% endif %}
+            {% endfor %}
+          <h3>興味</h3> 
+          <p class="hash">
+            {% for i in post.interest %}
+              {% if not forloop.first %}
+                <a href="/search/interest/{{ i }} }}/">#{{ i }}</a>
+              {% endif %}
+            {% endfor %}
+          </p>
+          <h3>同級生からつけられたタグ</h3>
+          <p class="hash">
+            {% for intro in post.introduce %}
+              {% if not forloop.first %}
+                <a href="/search/introduce/{{ intro }}/">#{{ intro }}</a>
+              {% endif %}
+            {% endfor %}
+          </p>
+        </div>
       </div>
     </div>
-    <div class="col-xs-2">
-    </div>
-  </div>
   {% endfor %}
 </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
