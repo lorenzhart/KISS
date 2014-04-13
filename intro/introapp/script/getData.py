@@ -45,5 +45,7 @@ client = MongoClient('localhost', 27017)
 db = client['intro']
 persons = db.persons
 
+persons.remove()
+
 for person in articles:
     persons.update({'id':person['id']}, person, True, False)
